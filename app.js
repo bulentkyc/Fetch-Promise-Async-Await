@@ -1,4 +1,5 @@
 function dataReceiver() {
+    document.querySelector('#search-results').innerHTML = '';
     async function dataHandler(data) {
         let result = await data.json();
         console.log(result);
@@ -9,7 +10,7 @@ function dataReceiver() {
                 <img src = "${movie.i.imageUrl}"
             </div>
             `
-            document.querySelector('body').insertAdjacentHTML('beforeend',card);
+            document.querySelector('#search-results').insertAdjacentHTML('beforeend',card);
         }
     }
 
