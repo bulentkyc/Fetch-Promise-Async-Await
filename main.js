@@ -7,7 +7,7 @@ function responseHandler(response) {
         );
 }
 
-
+function dataReceiverByPromise(){
 fetch('https://imdb8.p.rapidapi.com/title/auto-complete?q=back%20to%20the',
 {
     'method':'GET',
@@ -22,9 +22,10 @@ fetch('https://imdb8.p.rapidapi.com/title/auto-complete?q=back%20to%20the',
         console.log(err);
     }
 );
+console.log('This comes from dataReceiverByPromise');
+}
 
-
-async function dataReceiver() {
+async function dataReceiverByAsync() {
 let data = await fetch('https://imdb8.p.rapidapi.com/title/auto-complete?q=back%20to%20the',
 {
     'method':'GET',
@@ -33,11 +34,11 @@ let data = await fetch('https://imdb8.p.rapidapi.com/title/auto-complete?q=back%
         'x-rapidapi-host':'imdb8.p.rapidapi.com'
     }
 });
-
 console.log(await data.json());
+console.log('This comes from dataReceiverByAsync');
 }
-
-dataReceiver();
+dataReceiverByAsync();
+dataReceiverByPromise();
 
 //Exercise to understand Promise
 /* function test() {
