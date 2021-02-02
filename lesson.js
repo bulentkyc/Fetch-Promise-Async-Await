@@ -39,6 +39,7 @@ console.log('This comes from dataReceiverByAsync');
 }
 dataReceiverByAsync();
 dataReceiverByPromise();
+console.log('Hop');
 
 //Exercise to understand Promise
 /* function test() {
@@ -113,3 +114,24 @@ mySecPromise
 
 
 //
+
+let hi = new Promise(function(resolve,reject){
+    resolve('Hi');
+});
+
+console.log(hi);
+
+
+async function hello() {
+    return ('Hello');
+}
+
+console.log(hello());
+
+let hallo = async function(){
+    return ('Hallo');
+}
+
+//console.log(hallo())
+
+hallo().then(function(data){console.log(data)});
